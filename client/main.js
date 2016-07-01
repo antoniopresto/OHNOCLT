@@ -71,10 +71,10 @@ Array.apply(null, new Array(30)).map((e, i) => {
   }
 
   data[i] = {
-    [fields[0]]: moment(faker.date.between(`2015-06-${dia} 08:00`, `2015-06-${dia} 08:05`)).format('dddd  HH:mm'),
-    [fields[1]]: moment(faker.date.between(`2015-06-${dia} 10:59`, `2015-06-${dia} 11:00`)).format('dddd  HH:mm'),
-    [fields[2]]: moment(faker.date.between(`2015-06-${dia} 12:03`, `2015-06-${dia} 12:05`)).format('dddd  HH:mm'),
-    [fields[3]]: moment(faker.date.between(`2015-06-${dia} 16:59`, `2015-06-${dia} 17:02`)).format('dddd  HH:mm')
+    [fields[0]]: moment(faker.date.between(`2015-06-${dia} 08:00`, `2015-06-${dia} 08:05`)).format('dddd DD HH:mm'),
+    [fields[1]]: moment(faker.date.between(`2015-06-${dia} 10:59`, `2015-06-${dia} 11:00`)).format('dddd DD HH:mm'),
+    [fields[2]]: moment(faker.date.between(`2015-06-${dia} 12:03`, `2015-06-${dia} 12:05`)).format('dddd DD HH:mm'),
+    [fields[3]]: moment(faker.date.between(`2015-06-${dia} 16:59`, `2015-06-${dia} 17:02`)).format('dddd DD HH:mm')
   }
 })
 
