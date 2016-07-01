@@ -1,22 +1,9 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import faker from 'faker'
+import json2csc from 'jsgit add on2csv'
+import moment  from 'moment'
 
-import './main.html';
+global.moment = moment
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
+Array.apply(null, new Array(30)).map((e, i) => {
+  
+})
