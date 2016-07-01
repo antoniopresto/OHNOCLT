@@ -1,5 +1,5 @@
 import faker from 'faker'
-import json2csc from 'jsgit add on2csv'
+import json2csc from 'json2csv'
 import moment  from 'moment'
 
 global.moment = moment
