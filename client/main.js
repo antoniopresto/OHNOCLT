@@ -55,7 +55,7 @@ moment.defineLocale('pt-br', {
 moment.locale('pt-br');
 
 data = [];
-fields = ['Entrada', 'Saída para almoço', 'Volta do Almoço', 'Fim do Expediente'];
+fields = ['Dia', 'Entrada', 'Saída para almoço', 'Volta do Almoço', 'Fim do Expediente'];
 
 Array.apply(null, new Array(30)).map((e, i) => {
   const dia = i + 1;
@@ -66,15 +66,18 @@ Array.apply(null, new Array(30)).map((e, i) => {
       [fields[0]]: '',
       [fields[1]]: '',
       [fields[2]]: '',
-      [fields[3]]: ''
+      [fields[3]]: '',
+      [fields[4]]: ''
     }
   }
 
   data[i] = {
-    [fields[0]]: moment(faker.date.between(`2015-06-${dia} 08:00`, `2015-06-${dia} 08:05`)).format('dddd DD HH:mm'),
-    [fields[1]]: moment(faker.date.between(`2015-06-${dia} 10:59`, `2015-06-${dia} 11:00`)).format('dddd DD HH:mm'),
-    [fields[2]]: moment(faker.date.between(`2015-06-${dia} 12:03`, `2015-06-${dia} 12:05`)).format('dddd DD HH:mm'),
-    [fields[3]]: moment(faker.date.between(`2015-06-${dia} 16:59`, `2015-06-${dia} 17:02`)).format('dddd DD HH:mm')
+    [fields[0]]: moment(faker.date.between(`2016-06-${dia} 08:00`, `2016-06-${dia} 08:05`)).format('dddd'),
+
+    [fields[1]]: moment(faker.date.between(`2016-06-${dia} 08:00`, `2016-06-${dia} 08:05`)).format('HH:mm'),
+    [fields[2]]: moment(faker.date.between(`2016-06-${dia} 11:00`, `2016-06-${dia} 11:03`)).format('HH:mm'),
+    [fields[3]]: moment(faker.date.between(`2016-06-${dia} 12:03`, `2016-06-${dia} 12:07`)).format('HH:mm'),
+    [fields[4]]: moment(faker.date.between(`2016-06-${dia} 17:00`, `2016-06-${dia} 17:05`)).format('HH:mm')
   }
 })
 
