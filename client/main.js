@@ -56,11 +56,13 @@ moment.locale('pt-br');
 
 data = [];
 fields = ['Dia', 'Entrada', 'Saída para almoço', 'Volta do Almoço', 'Fim do Expediente'];
+const d = new Date();
+const ano_mes = `${d.getFullYear()}-${d.getMonth()}`;
 
 Array.apply(null, new Array(30)).map((e, i) => {
   const dia = i + 1;
 
-  const diaDaSemana = moment(faker.date.between(`2015-06-${dia} 08:00`, `2015-06-${dia} 08:05`)).format('dddd');
+  const diaDaSemana = moment(faker.date.between(`${ano_mes}-${dia} 08:00`, `${ano_mes}-${dia} 08:05`)).format('dddd');
   if (diaDaSemana == 'sábado' || diaDaSemana == 'domingo') {
     return data[i] = {
       [fields[0]]: '',
@@ -72,16 +74,16 @@ Array.apply(null, new Array(30)).map((e, i) => {
   }
 
   data[i] = {
-    [fields[0]]: moment(faker.date.between(`2016-06-${dia} 08:00`, `2016-06-${dia} 08:05`)).format('dddd'),
+    [fields[0]]: moment(faker.date.between(`${ano_mes}-${dia} 08:00`, `${ano_mes}-${dia} 08:05`)).format('dddd'),
 
-    [fields[1]]: moment(faker.date.between(`2016-06-${dia} 08:00`, `2016-06-${dia} 08:05`)).format('HH:mm'),
-    [fields[2]]: moment(faker.date.between(`2016-06-${dia} 11:00`, `2016-06-${dia} 11:03`)).format('HH:mm'),
-    [fields[3]]: moment(faker.date.between(`2016-06-${dia} 12:03`, `2016-06-${dia} 12:07`)).format('HH:mm'),
-    [fields[4]]: moment(faker.date.between(`2016-06-${dia} 17:00`, `2016-06-${dia} 17:05`)).format('HH:mm')
+    [fields[1]]: moment(faker.date.between(`${ano_mes}-${dia} 08:00`, `${ano_mes}-${dia} 08:05`)).format('HH:mm'),
+    [fields[2]]: moment(faker.date.between(`${ano_mes}-${dia} 11:00`, `${ano_mes}-${dia} 11:03`)).format('HH:mm'),
+    [fields[3]]: moment(faker.date.between(`${ano_mes}-${dia} 12:03`, `${ano_mes}-${dia} 12:07`)).format('HH:mm'),
+    [fields[4]]: moment(faker.date.between(`${ano_mes}-${dia} 17:00`, `${ano_mes}-${dia} 17:05`)).format('HH:mm')
   }
 })
 
-global.data = data
+global.data = data;
 
 json2csv({data, fields}, function(err, csv) {
   if (err) console.log(err);

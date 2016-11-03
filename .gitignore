@@ -1,3 +1,7 @@
+.demeteorized/*
+.idea/*
 node_modules/
-.demeteorized/
-.idea/
+dist/
+*.iml
+npm-debug.log
+bundlegit add
