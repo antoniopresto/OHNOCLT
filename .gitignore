@@ -1,6 +1,10 @@
+.demeteorized/*
+.idea/*
+node_modules/
+dist/
+*.iml
+npm-debug.log
 .DS_Store
-/.meteor
-*~
 /dev_bundle
 /dev_bundle*.tar.gz
 /android_bundle
@@ -11,6 +15,9 @@
 \#*\#
 .\#*
 .idea
+.idea/*
+.demeteorized
+.demeteorized/*
 *.iml
 *.sublime-project
 *.sublime-workspace
@@ -21,3 +28,4 @@ npm-debug.log
 universe
 .babel-cache
 mongo-test-output
+
